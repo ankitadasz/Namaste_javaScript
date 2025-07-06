@@ -1,10 +1,19 @@
-Everythinh in js happens inside an execution context
-execution context contain 2 component
--memory component/variable Environment
-*it stores variables and function as key value
-*a:10
-*fn:{}
--code Component/Thread of execution
-*in this the whole code is exicuted one line at a time
+# JavaScript Execution Context
 
-js is a synchronous ingle threaded language
+Everything in JavaScript happens inside an **Execution Context**.
+
+## Components of Execution Context
+
+### 1. Memory Component (Variable Environment)
+- It stores variables and functions as key-value pairs.
+- Example:
+  - `a: 10`
+  - `fn: {}`
+
+### 2. Code Component (Thread of Execution)
+- This is where the code is executed one line at a time.
+
+---
+
+## Important Note:
+JavaScript is a **synchronous**, **single-threaded** language.
