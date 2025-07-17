@@ -1,4 +1,5 @@
-# 1. What are Promises?
+***promises in js are the object which represent the eventual success or failure of the async operation***
+ # 1. What are Promises?
 
 Promises are **objects** used to perform **asynchronous operations**. They act like placeholders to store a **future value** that will be returned after some time.  
 They contain two main properties:
@@ -19,3 +20,4 @@ c) They provide results in **three states**:
    3. **Rejected**  
 d) We can **attach functions** to a promise object and retrieve its value (unlike callbacks where functions must be passed explicitly).  
 e) **Nesting** can be done in Promises, allowing us to return values in each individual chain.
+
