@@ -1,19 +1,26 @@
-// const cart=["shoes","pants","kurta"];
+const cart = ["shoes", "pants", "kurta"];
 
-// createOrder(cart,function(orderId){
-// proceedToPayment(orderId);
-// });
+createOrder(cart, function (orderId) {
+  proceedToPayment(orderId, function (paymentInfo) {
+    showOrderSummary(paymentInfo, function () {
+      updateWalletBalance();
+    });
+  });
+});
 
-// const promise=createOrder(cart);
+createOrder(cart)
+  .then((orderId) => proceedToPayment(orderId))
+  .then((paymentInfo) => showOrderSummary(paymentInfo))
+  .then((paymentInfo) => updateWalletBalance(paymentInfo));
 
-// promise.then(function(orderId){
-// proceedToPayment(orderId);
-// });
-const gitHub_API="https://api.github.com/users/ankitadasz"
-const user=fetch(gitHub_API);
 
-console.log(user);
-user.then(function(data){
-    console.log(data);
-    
-})
+
+
+// const gitHub_API="https://api.github.com/users/ankitadasz"
+// const user=fetch(gitHub_API);
+
+// console.log(user);
+// user.then(function(data){
+//     console.log(data);
+
+// })
