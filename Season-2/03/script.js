@@ -41,7 +41,11 @@ function createOrder(cart) {
 }
 
 function validateCart(cart) {
-  return false;
+  if(cart==null){
+    return false;
+  }
+  else
+  return true;
 }
 function proceedToPayment(orderId) {
   return new Promise(function (resolve, reject) {
