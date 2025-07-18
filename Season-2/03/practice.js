@@ -48,17 +48,25 @@ function walletBalance() {
   });
   return pr;
 }
+let orderId;
 createOrder(cart)
-.then ((orderId)=>{
+  .then((id) => {
+    orderId = id;
+    console.log("Order Created:", orderId);
     return proceedtopay(orderId);
-})
-.then((payment)=>{
+  })
+  .then((payment) => {
+    console.log(payment);
+
     return showOrder(orderId);
-})
-.then((orderdetail)=>{
+  })
+  .then((orderdetail) => {
+    console.log(orderdetail);
     return walletBalance();
-})
-.catch((err)=>{
-    console.log("Error caught");
-    
-})
+  })
+  .then((balance) => {
+    console.log(balance);
+  })
+  .catch((err) => {
+    console.log("Error caught", err);
+  });
