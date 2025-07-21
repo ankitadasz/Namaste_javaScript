@@ -1,20 +1,70 @@
-//******this in global space******//
-var a=10;
-if you write someyhing inside a function it is functional scope
-what ever there is outside on the top of the code is global space
+# `this` Keyword in JavaScript
 
-this keyword in global space behaves as aglobal object
-global object=>value of this keyword
+---
 
-**what is the value of this inside global space
-=>its a global object that can be different,it can be window it can be global depending upon where you are running that piece of code
+## **Global Space**
+- Anything outside of a function (on the top level of the code) is considered the **global space**.
+- The `this` keyword in the global space refers to the **global object**.
 
-This behave differently in strict mode and notstrict mode
-how to convert a code into strict mode
-=>just write "use strict" om the top of the code
+```javascript
+var a = 10;
+```
 
-if this is inside a function its value depends on the strict and nonstrict mode 
-in unstrict mode the value will be window and in strict mode the value will be undefined
-why?
-there is a phenomena this substitution 
-if the value of this keyword is undefined or null the this will be replaced with global object
+**Global Object Examples:**
+- In browsers: `window`
+- In Node.js: `global`
+
+---
+
+## **Value of `this` in Global Space**
+- It refers to the global object.
+- The exact global object depends on the environment (browser or Node.js).
+
+---
+
+## **Strict Mode vs Non-Strict Mode**
+- **Strict Mode** can be enabled by adding:
+  ```javascript
+  "use strict";
+  ```
+- Behavior of `this` inside a function:
+  - **Non-strict mode:** `this` will refer to `window` (or global object).
+  - **Strict mode:** `this` will be `undefined`.
+
+**Why?**  
+Due to **this substitution**:  
+- If `this` is `undefined` or `null`, JavaScript replaces it with the global object in non-strict mode.
+
+---
+
+## **Function Calls and `this`**
+```javascript
+x();         // `this` = undefined (in strict mode)
+window.x();  // `this` = window
+```
+
+---
+
+## **`this` Inside an Object's Method**
+- When `this` is used inside a method of an object, it refers to the **object itself**.
+
+---
+
+## **`this` Inside Arrow Functions**
+- In an arrow function, `this` does not have its own value.
+- It uses the value of `this` from the **enclosing lexical context**.
+- In the global context, `this` in an arrow function will refer to the **global object**.
+
+---
+
+## **`this` in Nested Arrow Functions**
+- The value of `this` depends on the **enclosing lexical scope** (the outer function).
+
+---
+
+## **`this` Inside DOM Elements**
+- When used inside a DOM element's event handler, `this` refers to the **HTML element** that received the event.
+
+---
+
+![alt text](image.png)
