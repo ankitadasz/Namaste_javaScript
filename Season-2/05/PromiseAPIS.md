@@ -37,6 +37,7 @@
 - **What if the promise which has to settle first gets rejected first?**
   - It will return the error.
   - So it will always return the **first settled promise value** (resolved or rejected).
+- When you say a promise is **settled**, that means you have got the result which is either **success or failure (resolved or rejected)**.
 
 ---
 
@@ -56,5 +57,6 @@
     [err1, err2, err3]
     ```
   - After 3 sec you will get the array of aggregate errors.
+- An **AggregateError** in JavaScript is a special type of error object that groups together multiple errors into a single error.
 
 ---
